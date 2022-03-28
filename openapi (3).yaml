@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Zixi Broadcaster
+tags:
+  - name: Configuration
+    description: Snapshot of the Broadcaster configuration.
+    
+servers:
+  - url: http://18.117.119.182:4444/
+  
+security:
+  - basicAuth: []
+
+
+
+
+paths: 
+  /configuration:
+    get: 
+      tags: 
+        - Configuration
+      responses:
+        200:
+          description: This is a snapshot of the configuration
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Broadcaster_Configuration'
+                
+                      
+components:
+  schemas:
+    Broadcaster_Configuration:
+      type: object
+      properties:
+        amzn: 
+          type: object
+          properties: 
+            name: 
+              type: string
+              example: Amazon
+        asi:
+          type: object
+          properties:
+            asi_init_time: 
+              type: integer 
+              example: 500
+            asi_pll:
+              type: boolean
+              example: true
+            asi_read_buff:
+              type: integer
+              example: 131600
+            asi_stuffing:
+              type: boolean
+              example: false
+              
+  securitySchemes:
+    basicAuth:     # <-- arbitrary name for the security scheme
+      type: http
+      scheme: basic
+
+        
+                      
+                    
+                      
+            
