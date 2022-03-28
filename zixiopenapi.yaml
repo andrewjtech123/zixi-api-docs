@@ -7,7 +7,7 @@ tags:
     description: Snapshot of the Broadcaster configuration.
     
 servers:
-  - url: http://18.117.119.182:4444/
+  - url: http://18.117.119.182:4444
   
 security:
   - basicAuth: []
